@@ -4,7 +4,7 @@
 #
 Name     : perl-Test-File-ShareDir-Dist
 Version  : 1.001001
-Release  : 1
+Release  : 2
 URL      : http://search.cpan.org/CPAN/authors/id/K/KE/KENTNL/Test-File-ShareDir-1.001001.tar.gz
 Source0  : http://search.cpan.org/CPAN/authors/id/K/KE/KENTNL/Test-File-ShareDir-1.001001.tar.gz
 Summary  : 'Create a Fake ShareDir for your modules for testing.'
