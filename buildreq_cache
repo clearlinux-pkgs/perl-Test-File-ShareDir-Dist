@@ -1,0 +1,8 @@
+1.001002
+perl(Class::Tiny)
+perl(File::Copy::Recursive)
+perl(File::ShareDir)
+perl(Path::Tiny)
+perl(Scope::Guard)
+perl(Test::Fatal)
+perl(Try::Tiny)
