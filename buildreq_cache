@@ -1,4 +1,5 @@
 1.001002
+perl(Class::Inspector)
 perl(Class::Tiny)
 perl(File::Copy::Recursive)
 perl(File::ShareDir)
