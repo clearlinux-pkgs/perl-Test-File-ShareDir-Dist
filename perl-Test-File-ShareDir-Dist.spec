@@ -72,14 +72,14 @@ find %{buildroot} -type f -name '*.bs' -empty -exec rm -f {} ';'
 
 %files
 %defattr(-,root,root,-)
-/usr/lib/perl5/vendor_perl/5.28.0/Test/File/ShareDir.pm
-/usr/lib/perl5/vendor_perl/5.28.0/Test/File/ShareDir/Dist.pm
-/usr/lib/perl5/vendor_perl/5.28.0/Test/File/ShareDir/Module.pm
-/usr/lib/perl5/vendor_perl/5.28.0/Test/File/ShareDir/Object/Dist.pm
-/usr/lib/perl5/vendor_perl/5.28.0/Test/File/ShareDir/Object/Inc.pm
-/usr/lib/perl5/vendor_perl/5.28.0/Test/File/ShareDir/Object/Module.pm
-/usr/lib/perl5/vendor_perl/5.28.0/Test/File/ShareDir/TempDirObject.pm
-/usr/lib/perl5/vendor_perl/5.28.0/Test/File/ShareDir/Utils.pm
+/usr/lib/perl5/vendor_perl/5.28.1Test/File/ShareDir.pm
+/usr/lib/perl5/vendor_perl/5.28.1Test/File/ShareDir/Dist.pm
+/usr/lib/perl5/vendor_perl/5.28.1Test/File/ShareDir/Module.pm
+/usr/lib/perl5/vendor_perl/5.28.1Test/File/ShareDir/Object/Dist.pm
+/usr/lib/perl5/vendor_perl/5.28.1Test/File/ShareDir/Object/Inc.pm
+/usr/lib/perl5/vendor_perl/5.28.1Test/File/ShareDir/Object/Module.pm
+/usr/lib/perl5/vendor_perl/5.28.1Test/File/ShareDir/TempDirObject.pm
+/usr/lib/perl5/vendor_perl/5.28.1Test/File/ShareDir/Utils.pm
 
 %files dev
 %defattr(-,root,root,-)
