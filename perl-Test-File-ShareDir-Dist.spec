@@ -10,6 +10,7 @@ Source0  : https://cpan.metacpan.org/authors/id/K/KE/KENTNL/Test-File-ShareDir-1
 Summary  : 'Create a Fake ShareDir for your modules for testing.'
 Group    : Development/Tools
 License  : Artistic-1.0 Artistic-1.0-Perl GPL-1.0
+Requires: perl-Test-File-ShareDir-Dist-license = %{version}-%{release}
 BuildRequires : buildreq-cpan
 BuildRequires : perl(Class::Inspector)
 BuildRequires : perl(Class::Tiny)
@@ -25,6 +26,24 @@ Test::File::ShareDir
 "Test::File::ShareDir" is some low level plumbing to enable a
 distribution to perform tests while consuming its own "share"
 directories in a manner similar to how they will be once installed.
+
+%package dev
+Summary: dev components for the perl-Test-File-ShareDir-Dist package.
+Group: Development
+Provides: perl-Test-File-ShareDir-Dist-devel = %{version}-%{release}
+Requires: perl-Test-File-ShareDir-Dist = %{version}-%{release}
+
+%description dev
+dev components for the perl-Test-File-ShareDir-Dist package.
+
+
+%package license
+Summary: license components for the perl-Test-File-ShareDir-Dist package.
+Group: Default
+
+%description license
+license components for the perl-Test-File-ShareDir-Dist package.
+
 
 %prep
 %setup -q -n Test-File-ShareDir-1.001002
@@ -65,3 +84,26 @@ find %{buildroot} -type f -name '*.bs' -empty -exec rm -f {} ';'
 
 %files
 %defattr(-,root,root,-)
+/usr/lib/perl5/vendor_perl/5.28.2/Test/File/ShareDir.pm
+/usr/lib/perl5/vendor_perl/5.28.2/Test/File/ShareDir/Dist.pm
+/usr/lib/perl5/vendor_perl/5.28.2/Test/File/ShareDir/Module.pm
+/usr/lib/perl5/vendor_perl/5.28.2/Test/File/ShareDir/Object/Dist.pm
+/usr/lib/perl5/vendor_perl/5.28.2/Test/File/ShareDir/Object/Inc.pm
+/usr/lib/perl5/vendor_perl/5.28.2/Test/File/ShareDir/Object/Module.pm
+/usr/lib/perl5/vendor_perl/5.28.2/Test/File/ShareDir/TempDirObject.pm
+/usr/lib/perl5/vendor_perl/5.28.2/Test/File/ShareDir/Utils.pm
+
+%files dev
+%defattr(-,root,root,-)
+/usr/share/man/man3/Test::File::ShareDir.3
+/usr/share/man/man3/Test::File::ShareDir::Dist.3
+/usr/share/man/man3/Test::File::ShareDir::Module.3
+/usr/share/man/man3/Test::File::ShareDir::Object::Dist.3
+/usr/share/man/man3/Test::File::ShareDir::Object::Inc.3
+/usr/share/man/man3/Test::File::ShareDir::Object::Module.3
+/usr/share/man/man3/Test::File::ShareDir::TempDirObject.3
+/usr/share/man/man3/Test::File::ShareDir::Utils.3
+
+%files license
+%defattr(0644,root,root,0755)
+/usr/share/package-licenses/perl-Test-File-ShareDir-Dist/LICENSE
