@@ -4,13 +4,14 @@
 #
 Name     : perl-Test-File-ShareDir-Dist
 Version  : 1.001002
-Release  : 14
+Release  : 15
 URL      : https://cpan.metacpan.org/authors/id/K/KE/KENTNL/Test-File-ShareDir-1.001002.tar.gz
 Source0  : https://cpan.metacpan.org/authors/id/K/KE/KENTNL/Test-File-ShareDir-1.001002.tar.gz
 Summary  : 'Create a Fake ShareDir for your modules for testing.'
 Group    : Development/Tools
 License  : Artistic-1.0 Artistic-1.0-Perl GPL-1.0
 Requires: perl-Test-File-ShareDir-Dist-license = %{version}-%{release}
+Requires: perl-Test-File-ShareDir-Dist-perl = %{version}-%{release}
 BuildRequires : buildreq-cpan
 BuildRequires : perl(Class::Inspector)
 BuildRequires : perl(Class::Tiny)
@@ -45,14 +46,24 @@ Group: Default
 license components for the perl-Test-File-ShareDir-Dist package.
 
 
+%package perl
+Summary: perl components for the perl-Test-File-ShareDir-Dist package.
+Group: Default
+Requires: perl-Test-File-ShareDir-Dist = %{version}-%{release}
+
+%description perl
+perl components for the perl-Test-File-ShareDir-Dist package.
+
+
 %prep
 %setup -q -n Test-File-ShareDir-1.001002
+cd %{_builddir}/Test-File-ShareDir-1.001002
 
 %build
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
-export LANG=C
+export LANG=C.UTF-8
 if test -f Makefile.PL; then
 %{__perl} Makefile.PL
 make  %{?_smp_mflags}
@@ -62,7 +73,7 @@ else
 fi
 
 %check
-export LANG=C
+export LANG=C.UTF-8
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
@@ -71,7 +82,7 @@ make TEST_VERBOSE=1 test
 %install
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/perl-Test-File-ShareDir-Dist
-cp LICENSE %{buildroot}/usr/share/package-licenses/perl-Test-File-ShareDir-Dist/LICENSE
+cp %{_builddir}/Test-File-ShareDir-1.001002/LICENSE %{buildroot}/usr/share/package-licenses/perl-Test-File-ShareDir-Dist/e7f3f3f70b446efad21498b493e4a3e3625e2df5
 if test -f Makefile.PL; then
 make pure_install PERL_INSTALL_ROOT=%{buildroot} INSTALLDIRS=vendor
 else
@@ -84,14 +95,6 @@ find %{buildroot} -type f -name '*.bs' -empty -exec rm -f {} ';'
 
 %files
 %defattr(-,root,root,-)
-/usr/lib/perl5/vendor_perl/5.28.2/Test/File/ShareDir.pm
-/usr/lib/perl5/vendor_perl/5.28.2/Test/File/ShareDir/Dist.pm
-/usr/lib/perl5/vendor_perl/5.28.2/Test/File/ShareDir/Module.pm
-/usr/lib/perl5/vendor_perl/5.28.2/Test/File/ShareDir/Object/Dist.pm
-/usr/lib/perl5/vendor_perl/5.28.2/Test/File/ShareDir/Object/Inc.pm
-/usr/lib/perl5/vendor_perl/5.28.2/Test/File/ShareDir/Object/Module.pm
-/usr/lib/perl5/vendor_perl/5.28.2/Test/File/ShareDir/TempDirObject.pm
-/usr/lib/perl5/vendor_perl/5.28.2/Test/File/ShareDir/Utils.pm
 
 %files dev
 %defattr(-,root,root,-)
@@ -106,4 +109,15 @@ find %{buildroot} -type f -name '*.bs' -empty -exec rm -f {} ';'
 
 %files license
 %defattr(0644,root,root,0755)
-/usr/share/package-licenses/perl-Test-File-ShareDir-Dist/LICENSE
+/usr/share/package-licenses/perl-Test-File-ShareDir-Dist/e7f3f3f70b446efad21498b493e4a3e3625e2df5
+
+%files perl
+%defattr(-,root,root,-)
+/usr/lib/perl5/vendor_perl/5.30.1/Test/File/ShareDir.pm
+/usr/lib/perl5/vendor_perl/5.30.1/Test/File/ShareDir/Dist.pm
+/usr/lib/perl5/vendor_perl/5.30.1/Test/File/ShareDir/Module.pm
+/usr/lib/perl5/vendor_perl/5.30.1/Test/File/ShareDir/Object/Dist.pm
+/usr/lib/perl5/vendor_perl/5.30.1/Test/File/ShareDir/Object/Inc.pm
+/usr/lib/perl5/vendor_perl/5.30.1/Test/File/ShareDir/Object/Module.pm
+/usr/lib/perl5/vendor_perl/5.30.1/Test/File/ShareDir/TempDirObject.pm
+/usr/lib/perl5/vendor_perl/5.30.1/Test/File/ShareDir/Utils.pm
