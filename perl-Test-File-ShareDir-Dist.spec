@@ -4,7 +4,7 @@
 #
 Name     : perl-Test-File-ShareDir-Dist
 Version  : 1.001002
-Release  : 16
+Release  : 17
 URL      : https://cpan.metacpan.org/authors/id/K/KE/KENTNL/Test-File-ShareDir-1.001002.tar.gz
 Source0  : https://cpan.metacpan.org/authors/id/K/KE/KENTNL/Test-File-ShareDir-1.001002.tar.gz
 Summary  : 'Create a Fake ShareDir for your modules for testing.'
@@ -113,11 +113,11 @@ find %{buildroot} -type f -name '*.bs' -empty -exec rm -f {} ';'
 
 %files perl
 %defattr(-,root,root,-)
-/usr/lib/perl5/vendor_perl/5.30.2/Test/File/ShareDir.pm
-/usr/lib/perl5/vendor_perl/5.30.2/Test/File/ShareDir/Dist.pm
-/usr/lib/perl5/vendor_perl/5.30.2/Test/File/ShareDir/Module.pm
-/usr/lib/perl5/vendor_perl/5.30.2/Test/File/ShareDir/Object/Dist.pm
-/usr/lib/perl5/vendor_perl/5.30.2/Test/File/ShareDir/Object/Inc.pm
-/usr/lib/perl5/vendor_perl/5.30.2/Test/File/ShareDir/Object/Module.pm
-/usr/lib/perl5/vendor_perl/5.30.2/Test/File/ShareDir/TempDirObject.pm
-/usr/lib/perl5/vendor_perl/5.30.2/Test/File/ShareDir/Utils.pm
+/usr/lib/perl5/vendor_perl/5.30.3/Test/File/ShareDir.pm
+/usr/lib/perl5/vendor_perl/5.30.3/Test/File/ShareDir/Dist.pm
+/usr/lib/perl5/vendor_perl/5.30.3/Test/File/ShareDir/Module.pm
+/usr/lib/perl5/vendor_perl/5.30.3/Test/File/ShareDir/Object/Dist.pm
+/usr/lib/perl5/vendor_perl/5.30.3/Test/File/ShareDir/Object/Inc.pm
+/usr/lib/perl5/vendor_perl/5.30.3/Test/File/ShareDir/Object/Module.pm
+/usr/lib/perl5/vendor_perl/5.30.3/Test/File/ShareDir/TempDirObject.pm
+/usr/lib/perl5/vendor_perl/5.30.3/Test/File/ShareDir/Utils.pm
